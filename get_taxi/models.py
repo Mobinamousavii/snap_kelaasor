@@ -10,4 +10,5 @@ class Trip(models.Model):
     latitude = models.CharField(max_length=100)
     longitude = models.CharField(max_length=100)
     customer = models.ForeignKey(to=User, on_delete=models.CASCADE)
+    duration = models.IntegerField(null=True, blank=True)
     

@@ -8,4 +8,10 @@ class RequestTaxiView(CreateAPIView):
     queryset = Trip.objects.all()
     serializer_class = TripSerializer
 
+    def perform_create(self, serializer):
+        duration = Trip.objects.get('duration')
+        serializer.save(
+            duration = duration,
+            customer = self.request.user
+        )
 
