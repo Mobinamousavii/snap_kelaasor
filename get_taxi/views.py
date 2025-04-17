@@ -16,6 +16,7 @@ def get_duration_from_neshan(origin_latitude, origin_longitude, destination_lati
     response = requests.get(url, headers= headers)
 
     data= response.json()
+    duration_value = data["rows"][0]["elements"][0]["duration"]["value"]
 
 
 class RequestTaxiView(CreateAPIView):
